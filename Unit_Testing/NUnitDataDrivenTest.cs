@@ -21,7 +21,7 @@ namespace Unit_Testing
         private Calculator calc;
 
         [TestCase(0, 0, ExpectedResult = 0)]
-        [TestCase("1", 0, ExpectedResult = 1)]
+        [TestCase(1, 0, ExpectedResult = 1)]
         [TestCase(5, 10, ExpectedResult = 15)]
         [TestCase(7, 8, ExpectedResult = 15)]
         public double Add_TC(double x, double y)
@@ -91,11 +91,11 @@ namespace Unit_Testing
             return calc.Multiply(x, y);
         }
 
-        [TestCase(2, 2, ExpectedResult = 4)]
-        [TestCase(5, 2, ExpectedResult = 25)]
-        [TestCase(105, 3, ExpectedResult = 11025)]
-        [TestCase(1, 1, ExpectedResult = 1)]
-        public double Power_TC(double x, double y)
+        [TestCase(2, 2.0, ExpectedResult = 4)]
+        [TestCase(5, 2.0, ExpectedResult = 25)]
+        [TestCase(105, 3.0, ExpectedResult = 1157625)]
+        [TestCase(1, 1.0, ExpectedResult = 1)]
+        public double Pow_TC(object x, object y)
         {
             calc = new Calculator();
             return calc.Pow(x, y);

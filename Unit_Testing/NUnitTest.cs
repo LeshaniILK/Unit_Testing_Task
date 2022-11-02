@@ -9,11 +9,11 @@ namespace Unit_Testing
     public class NUnitTest
     {
 
-        /*[TestFixtureSetUp]
+        [OneTimeSetUp]
         public static void ClassInit()
         {
             Console.WriteLine("Pre Condition for test class");
-        }*/
+        }
 
         [SetUp]
         public static void TestInit()
@@ -113,12 +113,12 @@ namespace Unit_Testing
         [Test]
         public void Pow_TC()
         {
-            double arg1 = 2;
-            double arg2 = 3;
-            double expected = 8;
+            var arg1 = 2;
+            var arg2 = 3.0;
+            var expected = 8;
             calc = new Calculator();
 
-            double result = calc.Pow(arg1, arg2);
+            var result = calc.Pow(arg1, arg2);
             Assert.That(result, Is.EqualTo(expected));
         }
 
